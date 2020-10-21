@@ -76,12 +76,14 @@ to the `borah.yml` file.  Separate files are a matter of convenience.
 
 The `borah.yml` file has the general structure:
 
+```
   # Meta-information for the entire Borah cluster
   name: Borah
   interconnect: Mellanox Non-Blocking HDR200/HDR100 Infiniband
   internet: 100GB ethernet
   # DO NOT EDIT BELOW THIS LINE
   nodes:
+```
 
 The `nodes:` tag _must not_ be removed, as all other yaml files are structured
 to fit under that tag.  Any cluster-wide specification can go in the
@@ -90,6 +92,7 @@ to fit under that tag.  Any cluster-wide specification can go in the
 The node specification files consist of lists of nodes.  A node definition
 consists of:
 
+```
   - type: Compute
     make: Dell
     model: C6420
@@ -99,9 +102,11 @@ consists of:
     ram: 192
     count: 40
     owner: Boise State
+  ```
 
 another example, perhaps stored in `condo.yml`:
 
+```
   - type: Condo
     make: Dell
     model: C6420
@@ -119,6 +124,7 @@ another example, perhaps stored in `condo.yml`:
     cpucores: 20
     count: 2
     owner: kyle
+```
 
 These files can be ingested to generate a variety of text, tables, etc for
 display on websites or in reports, as well as providing a history of the
