@@ -1,5 +1,3 @@
-owner: Idaho Power
-nodes:
 - type: Login
   make: Dell
   model: R340

@@ -9,6 +9,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
 
 	"github.com/go-yaml/yaml"
 )
@@ -26,16 +27,14 @@ type Nodes struct {
 	GPUCores int    `json:"gpucores,omitempty" yaml:"gpucores"`
 	RAM      int    `json:"ram" yaml:"ram"` // GB
 	Count    int    `json:"count" yaml:"count"`
+	Owner    string `json:"owner" yaml:"owner"`
 }
 
 type Cluster struct {
 	Name         string  `json:"name" yaml:"name"`
-	Interconnect string  `json":interconnect" yaml":interconnect"`
+	Interconnect string  `json":interconnect" yaml:"interconnect"`
+	Storage      string  `json:"storage" yaml:"storage"`
 	Nodes        []Nodes `json:"nodes" yaml:"nodes"`
-}
-
-func grantSummary(w io.Writer, c Cluster) error {
-	return nil
 }
 
 func main() {
@@ -46,30 +45,37 @@ func main() {
 		files []string
 		err   error
 	)
-	if flag.NArg() < 1 {
-		files, err = filepath.Glob("./*.yml")
-		if err != nil {
-			log.Fatal(err)
-		}
-	} else {
-		files = flag.Args()
+	files, err = filepath.Glob("./*.yml")
+	if err != nil {
+		log.Fatal(err)
 	}
-	var all []Cluster
-	for _, yml := range files {
-		var c Cluster
-		fin, err := os.Open(yml)
-		if err != nil {
-			log.Fatal(err)
+	sort.Slice(files, func(i, j int) bool {
+		if filepath.Base(files[i]) == "borah.yml" {
+			return true
+		} else if filepath.Base(files[j]) == "borah.yml" {
+			return false
 		}
-		err = yaml.NewDecoder(fin).Decode(&c)
-		fin.Close()
-		if err != nil {
-			log.Fatal(err)
-		}
-		all = append(all, c)
+		return files[i] < files[j]
+	})
+
+	if files[0] != "borah.yml" {
+		panic("failed to sort files with borah first")
 	}
+
+	readers := make([]io.Reader, len(files))
+	for i, f := range files {
+		fin, err := os.Open(f)
+		if err != nil {
+			log.Fatal(err)
+		}
+		readers[i] = fin
+		defer fin.Close()
+	}
+	r := io.MultiReader(readers...)
+	var c Cluster
+	err = yaml.NewDecoder(r).Decode(&c)
 	buf := &bytes.Buffer{}
-	for _, c := range all {
+	for _, c := range c.Nodes {
 		var b []byte
 		if *flagFormat == "json" {
 			if *flagPretty {

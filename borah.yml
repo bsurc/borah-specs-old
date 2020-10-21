@@ -1,0 +1,6 @@
+# Meta-information for the entire Borah cluster
+name: Borah
+interconnect: Mellanox Non-Blocking HDR200/HDR100 Infiniband
+internet: 100GB ethernet
+storage: Dell Isilon
+nodes:

@@ -1,7 +1,3 @@
-name: Borah
-interconnect: Mellanox Non-Blocking HDR200/HDR100 Infiniband
-internet: 100GB ethernet
-nodes:
 - type: Head
   make: Dell
   model: R440

@@ -1,0 +1,10 @@
+- type: Condo
+  owner: Eric Hayden
+  make: Dell
+  model: C6420
+  cpu: Intel Xeon Gold 6252
+  cpus: 2
+  cpucores: 24
+  ram: 192
+  count: 1
+
