@@ -41,3 +41,11 @@
   cpucores: 2
   ram: 768
   count: 1
+- type: New Monster Node
+  make:R640
+  cpu: Intel Xeon Gold 6252
+  cpus: 2
+  cpucores: 2
+  ram: 768
+  count: 1
+  owner: Mendi
