@@ -7,6 +7,6 @@ desc: Borah is a heterogeneous cluster consisting of general purpose compute
   nodes, GPU enabled nodes, and various special purpose nodes, all x86_64
   architecture, and all connected via Infiniband interconnect.  The cluster is
   attached to resilient, high-performance storage.  Exact specifications can be
-  found at https://boisestate.edu/rcs/hpc/ and
+  found at https://boisestate.edu/rcs/hpc/ and a detailed history at
   https://github.com/bsurc/borah-specs/.
 nodes:
