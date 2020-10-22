@@ -3,4 +3,19 @@ name: Borah
 interconnect: Mellanox Non-Blocking HDR200/HDR100 Infiniband
 internet: 100GB ethernet
 storage: Dell Isilon
+desc: Borah is a heterogeneous cluster installed at Idaho National Laboratory’s
+  Collaborative Computing Center (C3), where Idaho institutions have been invited
+  to install computing equipment in support of collaborative research among the
+  universities, Idaho National Laboratory researchers, and industry partners. The
+  university-owned portion of the cluster was funded by the Vice President of
+  Research, Vice President of Finance and Administration, and the Provost. The
+  cluster consists of general purpose compute nodes, GPU enabled nodes, and
+  various special purpose nodes, all x86_64 architecture, and all connected via
+  Infiniband interconnect.  The cluster is attached to resilient,
+  high-performance storage.  Borah is accessible via IRON’s
+  (Idaho Regional Optical Network) 100GB connection dedicated to research and
+  education which peers with Internet2, the nation’s largest and fastest,
+  coast-to-coast research and education network.
+  Exact specifications can be found at https://boisestate.edu/rcs/hpc/ and
+  https://github.com/bsurc/borah-specs/.
 nodes:

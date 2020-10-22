@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -34,6 +33,7 @@ type Cluster struct {
 	Name         string  `json:"name" yaml:"name"`
 	Interconnect string  `json":interconnect" yaml:"interconnect"`
 	Storage      string  `json:"storage" yaml:"storage"`
+	Desc         string  `json:"desc" yaml:"desc"`
 	Nodes        []Nodes `json:"nodes" yaml:"nodes"`
 }
 
@@ -74,22 +74,21 @@ func main() {
 	r := io.MultiReader(readers...)
 	var c Cluster
 	err = yaml.NewDecoder(r).Decode(&c)
-	buf := &bytes.Buffer{}
-	for _, c := range c.Nodes {
-		var b []byte
-		if *flagFormat == "json" {
-			if *flagPretty {
-				b, err = json.MarshalIndent(c, "", "  ")
-			} else {
-				b, err = json.Marshal(c)
-			}
-		} else if *flagFormat == "yaml" {
-			b, err = yaml.Marshal(c)
-		}
-		if err != nil {
-			log.Fatal(err)
-		}
-		buf.Write(b)
+	if err != nil {
+		log.Fatal(err)
 	}
-	fmt.Println(buf.String())
+	var b []byte
+	if *flagFormat == "json" {
+		if *flagPretty {
+			b, err = json.MarshalIndent(c, "", "  ")
+		} else {
+			b, err = json.Marshal(c)
+		}
+	} else if *flagFormat == "yaml" {
+		b, err = yaml.Marshal(c)
+	}
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(b))
 }
