@@ -24,7 +24,7 @@
   count: 40
 - type: GPU
   make: Dell
-  model: R740
+  model: R740XD
   cpu: Intel Xeon Gold 6252
   cpus: 2
   cpucores: 24
@@ -35,9 +35,9 @@
   count: 4
 - type: High Memory
   make: Dell
-  model: R640
+  model: R640MLK
   cpu: Intel Xeon Gold 6252
   cpus: 2
-  cpucores: 2
+  cpucores: 24
   ram: 768
   count: 1
