@@ -1,5 +1,5 @@
 - type: condo
-  owner: Eric Hayden
+  owner: GUTT Grant, Eric Hayden, Sven Buerki, Leonora Bittleston, Jen Forbey
   make: Dell
   model: C6420
   cpu: Intel Xeon Gold 6252
@@ -7,4 +7,14 @@
   cpucores: 24
   ram: 192
   count: 1
-
+- type: condo
+  owner: NAM, Tim Anderson, Will Hughes
+  make: Dell
+  model: DSS 8440
+  gpu: RTX8000
+  gpus: 8
+  cpu: Intel Xeon Gold 6252
+  cpus: 2
+  cpucores: 24
+  ram: 384
+  count: 1
