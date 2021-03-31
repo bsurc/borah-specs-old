@@ -1,48 +1,24 @@
 - type: Login
   make: Dell
   model: R340
-  chip: Intel XXXX
+  chip: Intel Xeon E-2146G
   cpus: 2
   cores: 28
-  ram: 192
+  ram: 64
   count: 1
 - type: Login
   make: Dell
   model: R340
-  chip: Intel XXXX
+  chip: Intel Xeon Gold 6252
   cpus: 2
   cores: 28
-  ram: 192
+  ram: 64
   count: 1
 - type: Compute
   make: Dell
-  model: XXXX
-  chip: Intel XXXX
+  model: 6420
+  chip: Intel Xeon Gold 6252
   cpus: 2
   cores: 28
   ram: 192
-  count: 32
-- type: GPU
-  make: Dell
-  model: XXXX
-  chip: NVidia XXXX
-  cpus: 2
-  cores: 12
-  ram: 768
-  count: 32
-- type: High Memory
-  make: Dell
-  model: XXXX
-  chip: Intel XXXX
-  cpus: 2
-  cores: 2
-  ram: 1024
-  count: 32
-- type: Compute
-  make: Dell
-  model: XXXX
-  chip: Intel XXXX
-  cpus: 2
-  cores: 28
-  ram: 192
-  count: 24
+  count: 68
