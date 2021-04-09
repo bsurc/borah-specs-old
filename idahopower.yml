@@ -6,9 +6,9 @@
   cores: 28
   ram: 64
   count: 1
-- type: Login
+- type: Head
   make: Dell
-  model: R340
+  model: R440
   chip: Intel Xeon Gold 6252
   cpus: 2
   cores: 28
