@@ -20,7 +20,7 @@ nodes:
   ram: 64
   count: 1
   owner: Boise State University
-  added: 2020-01-01
+  added: 2020-05-01
 - type: Login
   make: Dell
   model: R340
@@ -30,7 +30,7 @@ nodes:
   ram: 64
   count: 1
   owner: Boise State University
-  added: 2020-01-01
+  added: 2020-05-01
 - type: Compute
   make: Dell
   model: C6420
@@ -40,7 +40,7 @@ nodes:
   ram: 192
   count: 40
   owner: Boise State University
-  added: 2020-01-01
+  added: 2020-05-01
 - type: GPU
   make: Dell
   model: R740XD
@@ -49,11 +49,11 @@ nodes:
   cpucores: 24
   gpu: NVIDIA Tesla V100
   gpus: 2
-  gpucores: 5120
+  gpucores: 5120 CUDA
   ram: 384
   count: 4
   owner: Boise State University
-  added: 2020-01-01
+  added: 2020-05-01
 - type: High Memory
   make: Dell
   model: R640MLK
@@ -63,7 +63,7 @@ nodes:
   ram: 768
   count: 1
   owner: Boise State University
-  added: 2020-01-01
+  added: 2020-05-01
 # GUTT, Eric Hayden, Sven Buerki, Leonora Bittleston, Jen Forbey
 - type: Condominium
   make: Dell
@@ -74,49 +74,49 @@ nodes:
   ram: 192
   count: 1
   owner: GUTT Project
-  added: 2020-01-01
+  added: 2020-10-01
 # Tim Andersen/Will Hughes
 - type: Condominium
   make: Dell
   model: DSS 8440
   gpu: RTX8000
   gpus: 8
-  gpucores: 0
+  gpucores: 4608 CUDA
   cpu: Intel Xeon Gold 6252
   cpus: 2
   cpucores: 24
   ram: 384
   count: 1
   owner: NAM Project
-  added: 2020-01-01
+  added: 2021-01-25
 # Idaho Power
 - type: Login
   make: Dell
   model: R340
   chip: Intel Xeon E-2146G
-  cpus: 2
-  cores: 28
+  cpus: 1
+  cores: 6
   ram: 64
   count: 1
   owner: Idaho Power Company
-  added: 2020-01-01
+  added: 2020-05-01
 - type: Head
   make: Dell
   model: R440
   chip: Intel Xeon Gold 6252
   cpus: 2
-  cores: 28
+  cores: 24
   ram: 64
   count: 1
   owner: Idaho Power Company
-  added: 2020-01-01
+  added: 2020-05-01
 - type: Compute
   make: Dell
-  model: 6420
+  model: C6420
   chip: Intel Xeon Gold 6252
   cpus: 2
-  cores: 28
+  cores: 24
   ram: 192
   count: 68
   owner: Idaho Power Company
-  added: 2020-01-01
+  added: 2020-05-01
