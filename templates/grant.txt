@@ -1,0 +1,14 @@
+Borah is a heterogenous cluster installed at Idaho National Laboratory’s
+Collaborative Computing Center (C3), where Idaho institutions have been invited
+to install computing equipment in support of collaborative research among the
+universities, Idaho National Laboratory researchers, and industry partners. The
+university-owned portion of the cluster was funded by the Vice President of
+Research, Vice President of Finance and Administration, and the Provost.  The
+cluster has {{.NodeCount}} nodes, each with two {{.CPU}} CPUs;
+{{.GPUNodeCount}} GPU nodes, each with two {{.GPU}} and {{HiMemCount}} high
+memory node, with {{.HiMemRAM}} GB of RAM, and two Intel Xeon Gold 6252 2.1G,
+24-core CPUs. The cluster is attached to 730 TB of resilient, high-performing
+Isilon storage that uses an Infiniband high-speed interconnect. Borah is
+accessible via IRON’s (Idaho Regional Optical Network) 100GB connection
+dedicated to research and education which peers with Internet2, the nation’s
+largest and fastest, coast-to-coast research and education network.

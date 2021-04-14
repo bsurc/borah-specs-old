@@ -10,6 +10,10 @@ import (
 	"github.com/go-yaml/yaml"
 )
 
+func grantText(c Cluster) string {
+	return ""
+}
+
 // A set of homogeneous nodes
 type Nodes struct {
 	Type     string `json:"type" yaml:"type"`
