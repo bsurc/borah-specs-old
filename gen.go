@@ -4,14 +4,48 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io"
 	"log"
 	"os"
+	"text/template"
 
 	"github.com/go-yaml/yaml"
 )
 
-func grantText(c Cluster) string {
-	return ""
+func grantText(w io.Writer, c Cluster) error {
+	t := template.Must(template.New("grant").ParseFiles("templates/grant.txt"))
+	type txt struct {
+		ComputeCount int // computed
+		ComputeCores int // computed
+		ComputeMem   int
+		GPUCount     int // computed
+		GPUCores     int // computed
+		GPUMem       int
+		HighMemCount int
+		HighMemMem   int
+	}
+	x := txt{
+		ComputeMem:   192,
+		GPUMem:       384,
+		HighMemCount: 1,
+		HighMemMem:   768,
+	}
+
+	for _, node := range c.Nodes {
+		// Only Boise State and Condo nodes
+		if node.Owner == "Idaho Power Company" {
+			continue
+		}
+		switch node.Type {
+		case "Compute":
+			x.ComputeCount += node.Count
+			x.ComputeCores += node.CPUCores * node.Count
+		case "GPU":
+			x.GPUCount += node.Count
+			x.GPUCores += node.GPUCores * node.Count
+		}
+	}
+	return t.ExecuteTemplate(w, "grant", x)
 }
 
 // A set of homogeneous nodes
@@ -40,8 +74,10 @@ type Cluster struct {
 }
 
 func main() {
+	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	flagFormat := flag.String("f", "json", "output format (json, yaml)")
 	flagPretty := flag.Bool("pretty", false, "pretty-print json")
+	flagTemplate := flag.String("t", "", "execute a template")
 	flag.Parse()
 	r, err := os.Open("./borah.yml")
 	if err != nil {
@@ -51,6 +87,16 @@ func main() {
 	err = yaml.NewDecoder(r).Decode(&c)
 	if err != nil {
 		log.Fatal(err)
+	}
+	switch *flagTemplate {
+	case "":
+		break
+	case "templates/grant.txt", "grant.txt", "grant":
+		err := grantText(os.Stdout, c)
+		if err != nil {
+			log.Fatal(err)
+		}
+		os.Exit(0)
 	}
 	var b []byte
 	switch *flagFormat {

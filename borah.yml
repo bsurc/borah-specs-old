@@ -3,12 +3,7 @@ name: Borah
 interconnect: Mellanox Non-Blocking HDR200/HDR100 Infiniband
 internet: 100GB ethernet
 storage: Dell Isilon
-desc: Borah is a heterogeneous cluster consisting of general purpose compute
-  nodes, GPU enabled nodes, and various special purpose nodes, all x86_64
-  architecture, and all connected via Infiniband interconnect.  The cluster is
-  attached to resilient, high-performance storage.  Exact specifications can be
-  found at https://boisestate.edu/rcs/hpc/ and a detailed history at
-  https://github.com/bsurc/borah-specs/.
+desc:
 nodes:
 # Core Research Computing Nodes
 - type: Head
@@ -49,7 +44,7 @@ nodes:
   cpucores: 24
   gpu: NVIDIA Tesla V100
   gpus: 2
-  gpucores: 5120 CUDA
+  gpucores: 5120 # CUDA 
   ram: 384
   count: 4
   owner: Boise State University
@@ -64,8 +59,8 @@ nodes:
   count: 1
   owner: Boise State University
   added: 2020-05-01
-# Condo, GUTT, Eric Hayden, Sven Buerki, Leonora Bittleston, Jen Forbey
-- type: CPU
+# GUTT, Eric Hayden, Sven Buerki, Leonora Bittleston, Jen Forbey
+- type: Compute
   make: Dell
   model: C6420
   cpu: Intel Xeon Gold 6252
@@ -75,13 +70,13 @@ nodes:
   count: 1
   owner: GUTT Project
   added: 2020-10-01
-# Condo, Tim Andersen/Will Hughes
+# Tim Andersen/Will Hughes
 - type: GPU
   make: Dell
   model: DSS 8440
   gpu: RTX8000
   gpus: 8
-  gpucores: 4608 CUDA
+  gpucores: 4608 # CUDA
   cpu: Intel Xeon Gold 6252
   cpus: 2
   cpucores: 24
