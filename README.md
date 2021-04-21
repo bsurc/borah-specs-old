@@ -4,7 +4,9 @@ This repository holds the history of the Borah HPC cluster specifications.
 Tags are used to discern each change to the configuration of the cluster.  The
 changes may include expansion of the base cluster, addition of condominium
 nodes, or removal of expired nodes.  A master record DOI is available at the
-[Albertsons Library Site](https://scholarworks.boisestate.edu/oit/3/).
+[Albertsons Library Site](https://scholarworks.boisestate.edu/oit/3/).  A
+textual description of the current configuration can be found on the
+[RCS Website](https://www.boisestate.edu/rcs/hpc/).
 
 The following are links to specific tags/dates of the configuration history.
 
