@@ -14,3 +14,8 @@ The following are links to specific tags/dates of the configuration history.
 <tr><td>2020-10-01</td><td>TBD</td><td>Addition of GUTT compute node</td></tr>
 <tr><td>2021-01-25</td><td>TBD</td><td>Addition of NAM GPU node</td></tr>
 </table>
+
+The detailed specifications are in the `borah.yml` file, and should represent
+the cluster based on the tag(s) above.  To inspect the specifications at the
+cluster at a point in time, click the tag link and navigate to the `borah.yml`
+file for that checkin.
