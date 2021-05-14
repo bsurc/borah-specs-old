@@ -77,7 +77,7 @@ nodes:
   gpu: RTX8000
   gpus: 8
   gpucores: 4608 # CUDA
-  cpu: Intel Xeon Gold 6252
+  cpu: Intel Xeon Gold 6248R
   cpus: 2
   cpucores: 24
   ram: 384
